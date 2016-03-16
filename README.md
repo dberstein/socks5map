@@ -3,8 +3,8 @@ socks5map
 
 Development SOCKS5 server to handle fake DNS resolution. Thin layer over https://github.com/armon/go-socks5
 
-0. Start `socks5map`, by default listens to `:8080`, can be controller with `-l` flag.
-0. Configure browser to use SOCKS5 proxy (ie. `127.0.0.1:8080`).
+0. Start `socks5map`, by default listens to `:1080`, can be controller with `-l` flag.
+0. Configure browser to use SOCKS5 proxy (ie. `127.0.0.1:1080`).
 0. Now any hostname will be "proxied" to localhost, where you should have a web server.
 0. You can also resolve particular domains to particular IPs instead of a wildcard using the `-r` flag.
 
@@ -32,6 +32,5 @@ Installation
 -----
 
 ```
-go get github.com/armon/go-socks5
 go get github.com/dberstein/socks5map
 ```

@@ -89,7 +89,7 @@ const WildcardDomain = "*"
 func main() {
 	var resolvingMap, listenAddr string
 
-	flag.StringVar(&listenAddr, "l", ":8080", "Listen address")
+	flag.StringVar(&listenAddr, "l", ":1080", "Listen address")
 	flag.StringVar(&resolvingMap, "r", ":127.0.0.1", "Comma separated list of \"domain:IP\" for DNS resolving, \""+WildcardDomain+"\" or empty matches any name.\n\tDomains not in list/wildcard resolve through regular system DNS.")
 	flag.Parse()
 
