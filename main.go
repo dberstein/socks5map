@@ -8,6 +8,8 @@ import (
 	"os"
 	"strings"
 
+	"golang.org/x/net/context"
+
 	"github.com/armon/go-socks5"
 )
 
@@ -31,10 +33,11 @@ func NewDNSResolver(resolvingMap string) *DNSResolver {
 }
 
 // Resolve implements custom name resolution
-func (r *DNSResolver) Resolve(name string) (ip net.IP, err error) {
-	ip, err = r.resolve(name)
+func (r *DNSResolver) Resolve(ctx context.Context, name string) (context.Context, net.IP, error) {
+	// func (r *DNSResolver) Resolve(name string) (ip net.IP, err error) {
+	ip, err := r.resolve(name)
 	log.Printf("Resolved \"%v\": %v", name, ip)
-	return ip, err
+	return ctx, ip, err
 }
 
 func (r *DNSResolver) resolve(name string) (ip net.IP, err error) {
